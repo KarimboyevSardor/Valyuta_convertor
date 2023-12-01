@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/main">
+
+    <fragment
+        android:id="@+id/main"
+        android:name="com.example.valyutaconvertor.fragment.Main"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_main_to_kreditKalkulyator"
+            app:destination="@id/kreditKalkulyator" />
+        <action
+            android:id="@+id/action_main_to_valyutaConvertor"
+            app:destination="@id/valyutaConvertor" />
+    </fragment>
+    <fragment
+        android:id="@+id/kreditKalkulyator"
+        android:name="com.example.valyutaconvertor.fragment.KreditKalkulyator"
+        android:label="fragment_kredit_kalkulyator"
+        tools:layout="@layout/fragment_kredit_kalkulyator" >
+        <action
+            android:id="@+id/action_kreditKalkulyator_to_valyutaConvertor"
+            app:destination="@id/valyutaConvertor" />
+        <action
+            android:id="@+id/action_kreditKalkulyator_to_main"
+            app:destination="@id/main" />
+    </fragment>
+    <fragment
+        android:id="@+id/valyutaConvertor"
+        android:name="com.example.valyutaconvertor.fragment.ValyutaConvertor"
+        android:label="fragment_valyuta_convertor"
+        tools:layout="@layout/fragment_valyuta_convertor" >
+        <action
+            android:id="@+id/action_valyutaConvertor_to_main"
+            app:destination="@id/main" />
+        <action
+            android:id="@+id/action_valyutaConvertor_to_kreditKalkulyator"
+            app:destination="@id/kreditKalkulyator" />
+    </fragment>
+</navigation>
